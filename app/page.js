@@ -30,20 +30,15 @@ import toast from "react-hot-toast";
 
 export default function Home() {
 	return (
-		<>
-			<div className="fixed flex w-full items-center justify-center text-2xl font-bold top-0 h-12 bg-secondary-foreground text-secondary z-50 opacity-75">
-				WEBSITE UNDER DEVELOPMENT
-			</div>
-			<div
-				className="flex min-h-screen flex-col p-10 md:p-24 max-w-screen-2xl mx-auto"
-				id="home"
-			>
-				<Navbar />
-				<Hero />
-				<Projects />
-				<Contact />
-			</div>
-		</>
+		<div
+			className="flex min-h-screen flex-col p-10 md:p-24 max-w-screen-2xl mx-auto"
+			id="home"
+		>
+			<Navbar />
+			<Hero />
+			<Projects />
+			<Contact />
+		</div>
 	);
 }
 
