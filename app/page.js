@@ -524,15 +524,23 @@ function Footer() {
 						Contact
 					</Link>
 				</div>
+
 				<div className="flex flex-col space-y-1">
 					<p className="font-semibold underline underline-offset-4">Tools</p>
-					{/* <Link
+					<Link
 						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"/"}
+						href={"https://trysummaraize.vercel.app/"}
+						target="_blank"
 					>
-						Markdown Editor
-					</Link> */}
-					<p className="text-muted-foreground">Nothing here... yet.</p>
+						AI Article Summarizer
+					</Link>
+					{/* <Link
+							className="text-muted-foreground hover:text-primary transition-colors w-fit"
+							href={"/"}
+						>
+							Markdown Editor
+						</Link> */}
+					<p className="text-muted-foreground text-sm">To be continued...</p>
 				</div>
 			</div>
 		</div>
