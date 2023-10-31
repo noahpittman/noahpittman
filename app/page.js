@@ -1,7 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { FileIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+	CornerBottomLeftIcon,
+	EnvelopeClosedIcon,
+	FileIcon,
+	GlobeIcon,
+	HamburgerMenuIcon,
+	InstagramLogoIcon,
+	LinkedInLogoIcon,
+	TwitterLogoIcon,
+} from "@radix-ui/react-icons";
 import {
 	Sheet,
 	SheetContent,
@@ -38,6 +47,7 @@ export default function Home() {
 			<Hero />
 			<Projects />
 			<Contact />
+			<Footer />
 		</div>
 	);
 }
@@ -67,7 +77,7 @@ function Navbar() {
 			<div className="fixed z-10 md:hidden">
 				<Sheet>
 					<SheetTrigger>
-						<div className="border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+						<div className="border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
 							<HamburgerMenuIcon className="h-4 w-4" />
 						</div>
 					</SheetTrigger>
@@ -127,7 +137,7 @@ function Navbar() {
 function Hero() {
 	return (
 		<div className="min-h-screen flex flex-col md:gap-4 gap-16 mb-8 sm:mb-0">
-			<section className="space-y-4 -mt-4 md:-mt-0 py-16 md:py-24">
+			<section className="space-y-4 -mt-4 md:-mt-0 pt-16 md:pb-12 md:py-24">
 				<span className="font-mono opacity-75 text-lg bg-foreground/10 p-1 px-2 rounded-md">
 					Hi, my name is
 				</span>
@@ -443,5 +453,88 @@ function Contact() {
 				</form>
 			</div>
 		</section>
+	);
+}
+
+function Footer() {
+	const contactInfo = [
+		{ value: "noahpittman00@gmail.com", logo: "" },
+		{ value: "www.noahpittman.xyz", logo: "website" },
+	];
+
+	return (
+		<div
+			className="w-full mt-12 p-4 border-t border-t-muted-foreground flex min-h-52 flex-col sm:flex-row"
+			id="footer"
+		>
+			<div className=" max-w-xs">
+				<h2 className="text-2xl">Noah Pittman</h2>
+				<p className="text-xl text-muted-foreground">Developer, Creative.</p>
+				<Separator />
+				<div className="space-y-2 py-4">
+					<div className="flex items-center text-muted-foreground">
+						<EnvelopeClosedIcon className="h-4 w-4 mr-2" />
+						<p>noahpittman00@gmail.com</p>
+					</div>
+					<div className="flex items-center text-muted-foreground">
+						<GlobeIcon className="h-4 w-4 mr-2" />
+						<p>www.noahpittman.xyz</p>
+					</div>
+					<div className="w-full flex gap-12 h-12 items-center">
+						<LinkedInLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
+						<InstagramLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
+						<TwitterLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
+					</div>
+				</div>
+			</div>
+			<Separator className="sm:w-[1px] sm:h-52 sm:mx-4" />
+			<div className="sm:p-4 pt-4 sm:pt-0 flex flex-col sm:flex-row flex-wrap gap-12 sm:gap-16">
+				<div className="flex flex-col space-y-1">
+					<p className="font-semibold underline underline-offset-4">
+						Navigation
+					</p>
+					<Link
+						className="text-muted-foreground hover:text-primary transition-colors w-fit"
+						href={"/"}
+					>
+						Home
+					</Link>
+					<Link
+						className="text-muted-foreground hover:text-primary transition-colors w-fit"
+						href={"/#projects"}
+					>
+						Projects
+					</Link>
+					<Link
+						className="text-muted-foreground hover:text-primary transition-colors w-fit"
+						href={"/#blog"}
+					>
+						Blog
+					</Link>
+					<Link
+						className="text-muted-foreground flex hover:text-primary transition-colors w-fit"
+						href={"/#blog"}
+					>
+						<CornerBottomLeftIcon /> All Blog Posts (Under Development)
+					</Link>
+					<Link
+						className="text-muted-foreground hover:text-primary transition-colors w-fit"
+						href={"/#contact"}
+					>
+						Contact
+					</Link>
+				</div>
+				<div className="flex flex-col space-y-1">
+					<p className="font-semibold underline underline-offset-4">Tools</p>
+					{/* <Link
+						className="text-muted-foreground hover:text-primary transition-colors w-fit"
+						href={"/"}
+					>
+						Markdown Editor
+					</Link> */}
+					<p className="text-muted-foreground">Nothing here... yet.</p>
+				</div>
+			</div>
+		</div>
 	);
 }
