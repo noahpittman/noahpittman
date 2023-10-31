@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 240 10% 3.9%;
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 240 5.9% 90%;
+		--input: 240 5.9% 90%;
+		--ring: 240 5.9% 10%;
+		--radius: 0.75rem;
+	}
+
+	.dark {
+		--background: 240 10% 3.9%;
+		--foreground: 0 0% 98%;
+		--card: 240 10% 3.9%;
+		--card-foreground: 0 0% 98%;
+		--popover: 240 10% 3.9%;
+		--popover-foreground: 0 0% 98%;
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 0 0% 98%;
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+		--accent: 240 3.7% 15.9%;
+		--accent-foreground: 0 0% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 240 3.7% 15.9%;
+		--input: 240 3.7% 15.9%;
+		--ring: 240 4.9% 83.9%;
+	}
+}
+
+/* Blinking Animation */
+/* .blink {
+	animation: blink-animation 2s steps(2, start) infinite;
+	-webkit-animation: blink-animation 2s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
+@-webkit-keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+} */
+
+.slider::after {
+	transform: rotateZ(180deg);
+}
+
+/*  IMPORTANT CODE BELOW */
+
+.slide-track {
+	width: calc(150px * 25);
+	display: flex;
+	animation: scroll 20s linear infinite;
+	justify-content: space-between;
+}
+
+.slide-track2 {
+	width: calc(150px * 22);
+	display: flex;
+	animation: scroll2 15s linear infinite;
+	justify-content: space-between;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(calc(-150px * 10));
+	}
+}
+
+@keyframes scroll2 {
+	0% {
+		transform: translateX(calc(-150px * 5));
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.slide-track {
+		width: calc(80px * 40);
+	}
+
+	.slide-track2 {
+		width: calc(80px * 45);
+	}
+
+	@keyframes scroll {
+		0% {
+			transform: translateX(0px);
+		}
+		100% {
+			transform: translateX(calc(-80px * 10));
+		}
+	}
+
+	@keyframes scroll2 {
+		0% {
+			transform: translateX(calc(-80px * 5));
+		}
+		100% {
+			transform: translateX(0px);
+		}
+	}
+}

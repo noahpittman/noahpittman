@@ -1,0 +1,451 @@
+"use client";
+
+import Link from "next/link";
+import { FileIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { Separator } from "@/components/ui/separator";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import SectionHeading from "@/components/SectionHeading";
+import toast from "react-hot-toast";
+
+export default function Home() {
+	return (
+		<>
+			<div className="fixed flex w-full items-center justify-center text-2xl font-bold top-0 h-12 bg-secondary-foreground text-secondary z-50 opacity-75">
+				WEBSITE UNDER DEVELOPMENT
+			</div>
+			<div
+				className="flex min-h-screen flex-col p-10 md:p-24 max-w-screen-2xl mx-auto"
+				id="home"
+			>
+				<Navbar />
+				<Hero />
+				<Projects />
+				<Contact />
+			</div>
+		</>
+	);
+}
+
+function Navbar() {
+	const navigation = [
+		{ route: "/#home", name: "Home" },
+		{ route: "/#projects", name: "Projects" },
+		{ route: "/#blog", name: "Blog" },
+		{ route: "/#contact", name: "Contact" },
+	];
+
+	return (
+		<header className="flex flex-wrap-reverse w-full justify-end md:justify-between items-center gap-4">
+			<div className="hidden md:flex gap-2">
+				{navigation.map((route) => (
+					<div key={route.name} className="flex">
+						<Button variant="ghost" asChild>
+							<Link scroll href={route.route}>
+								{route.name}
+							</Link>
+						</Button>
+						<Separator className="ml-2" orientation="vertical" />
+					</div>
+				))}
+			</div>
+			<div className="fixed z-10 md:hidden">
+				<Sheet>
+					<SheetTrigger>
+						<div className="border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+							<HamburgerMenuIcon className="h-4 w-4" />
+						</div>
+					</SheetTrigger>
+
+					<div className="space-y-4">
+						<SheetContent>
+							<div className="pb-20">
+								<SheetHeader>
+									<SheetTitle className="pb-4 text-center">
+										Navigation
+									</SheetTitle>
+								</SheetHeader>
+								<Separator className="my-4" />
+								<div className="flex flex-col gap-4">
+									{navigation.map((route) => (
+										<Button key={route.name} asChild variant="ghost" size="lg">
+											<Link scroll href={route.route}>
+												{route.name}
+											</Link>
+										</Button>
+									))}
+								</div>
+							</div>
+							<div>
+								<SheetHeader>
+									<SheetTitle className="pb-4 text-center">Resumé</SheetTitle>
+								</SheetHeader>
+								<Separator className="my-4" />
+								<div className="flex flex-col gap-4">
+									<Button asChild variant="ghost" size="lg">
+										<Link scroll href={"/"}>
+											View
+										</Link>
+									</Button>
+									<Button asChild variant="ghost" size="lg">
+										<Link scroll href={"/"}>
+											Download
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</SheetContent>
+					</div>
+				</Sheet>
+			</div>
+			<div className="hidden md:flex gap-4 items-center">
+				<ModeToggle />
+				<Button variant="secondary">
+					<FileIcon className="mr-2 h-4 w-4" />
+					Resumé
+				</Button>
+			</div>
+		</header>
+	);
+}
+
+function Hero() {
+	return (
+		<div className="min-h-screen flex flex-col md:gap-4 gap-16">
+			<section className="space-y-4 -mt-4 md:-mt-0 py-16 md:py-24">
+				<span className="font-mono opacity-75 text-lg bg-foreground/10 p-1 px-2 rounded-md">
+					Hi, my name is
+				</span>
+				<h1 className="text-5xl flex items-center md:text-7xl font-semibold tracking-wide ">
+					Noah Pittman.
+					<span className="pl-4 text-4xl md:text-6xl opacity-100">👋</span>
+				</h1>
+				<h2 className="text-3xl md:text-4xl tracking-tight md:gap-4 flex flex-col md:flex-row opacity-80">
+					Full Stack Developer.
+				</h2>
+				<p className="text-lg max-w-[65ch] tracking-tight">
+					I'm a Canadian full-stack developer with a passion for learning, and a
+					burning desire to do the best work possible. Check below to see some
+					of my work, or use the navigation menu above to jump to a section.
+					<br />
+					<br />
+					When I'm not coding or working on projects, I'm making music, editing
+					video, or reading greek philosophy. Contact me if you have a project
+					you want to discuss!
+				</p>
+			</section>
+			<div className="">
+				<Stack />
+			</div>
+		</div>
+	);
+}
+
+function Stack() {
+	const techStack = [
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"TypeScript",
+		"Node.js",
+		"MySQL",
+		"UI/UX",
+	];
+
+	return (
+		<>
+			<div
+				className="slider max-w-screen-lg mx-auto pointer-events-none
+
+				relative w-full grid place-items-center overflow-hidden
+				before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
+				after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)]  
+			"
+			>
+				<div className="slide-track my-4">
+					{techStack.reverse().map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+					{techStack.map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+					{techStack.reverse().map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+					{techStack.map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+				</div>
+			</div>
+			<div
+				className="
+						slider max-w-screen-lg mx-auto relative w-full grid place-items-center overflow-hidden pointer-events-none
+
+						before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
+						
+						after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)] 
+					"
+			>
+				<div className="slide-track2 my-4">
+					{techStack.reverse().map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+					{techStack.map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+					{techStack.reverse().map((tech) => (
+						<div
+							key={tech}
+							className="px-4 py-2 border border-foreground/25 shadow-sm rounded-md"
+						>
+							{tech}
+						</div>
+					))}
+				</div>
+			</div>
+		</>
+	);
+}
+
+function Projects() {
+	return (
+		<div id="projects" className="space-y-12 pt-2">
+			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
+			<div>
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pr-9 sm:pr-0 max-w-screen-xl">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+						<CardHeader>
+							<CardTitle className="flex items-center md:text-2xl">
+								<FileIcon className="mr-2" />
+								donebyHD Ent.
+							</CardTitle>
+							<CardDescription>
+								Made for a client. A portfolio & branding website with a custom
+								API connected to a MySQL database. Complete CRUD API
+								functionality from a custom CMS dashboard with Google
+								authentication.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className="flex flex-col justify-around h-48">
+							<Button size="lg">Live Demo</Button>
+							<Button size="lg" variant="ghost">
+								Gallery
+							</Button>
+							<Button size="lg" variant="ghost">
+								Repository
+							</Button>
+						</CardContent>
+					</Card>
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+						<CardHeader>
+							<CardTitle className="flex items-center md:text-2xl">
+								<FileIcon className="mr-2" />
+								donebyHD Ent.
+							</CardTitle>
+							<CardDescription>
+								Made for a client. A portfolio & branding website with a custom
+								API connected to a MySQL database. Complete CRUD API
+								functionality from a custom CMS dashboard with Google
+								authentication.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className="flex flex-col justify-around h-48">
+							<Button size="lg">Live Demo</Button>
+							<Button size="lg" variant="ghost">
+								Gallery
+							</Button>
+							<Button size="lg" variant="ghost">
+								Repository
+							</Button>
+						</CardContent>
+					</Card>
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+						<CardHeader>
+							<CardTitle className="flex items-center md:text-2xl">
+								<FileIcon className="mr-2" />
+								donebyHD Ent.
+							</CardTitle>
+							<CardDescription>
+								Made for a client. A portfolio & branding website with a custom
+								API connected to a MySQL database. Complete CRUD API
+								functionality from a custom CMS dashboard with Google
+								authentication.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className="flex flex-col justify-around h-48">
+							<Button size="lg">Live Demo</Button>
+							<Button size="lg" variant="ghost">
+								Gallery
+							</Button>
+							<Button size="lg" variant="ghost">
+								Repository
+							</Button>
+						</CardContent>
+					</Card>
+					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01]">
+						<CardHeader>
+							<CardTitle className="flex items-center md:text-2xl">
+								<FileIcon className="mr-2" />
+								donebyHD Ent.
+							</CardTitle>
+							<CardDescription className="text-secondary/95">
+								Made for a client. A portfolio website with a custom API
+								connected to a MySQL database. API calls to create, update, and
+								delete entries from a custom CMS dashboard.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className="flex flex-col justify-around h-48">
+							<Button size="lg" variant="secondary">
+								Live Demo
+							</Button>
+							<Button size="lg" variant="ghost">
+								Gallery
+							</Button>
+							<Button size="lg" variant="ghost">
+								Repository
+							</Button>
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+function Contact() {
+	const [nameInput, setNameInput] = useState("");
+	const [emailInput, setEmailInput] = useState("");
+	const [messageInput, setMessageInput] = useState("");
+
+	const handleName = (e) => {
+		setNameInput(e.target.value);
+	};
+	const handleEmail = (e) => {
+		setEmailInput(e.target.value);
+	};
+	const handleMessage = (e) => {
+		setMessageInput(e.target.value);
+	};
+
+	const clearForm = () => {
+		setNameInput("");
+		setEmailInput("");
+		setMessageInput("");
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		try {
+			throw new Error("err");
+			console.log({
+				name: nameInput,
+				email: emailInput,
+				message: messageInput,
+			});
+			clearForm();
+			toast.success("Email successfully sent!");
+		} catch (error) {
+			toast.error("This is still in development.");
+			// toast.error("Something went wrong. \n Please try again later.");
+		}
+	};
+
+	return (
+		<section className="py-24" id="contact">
+			<SectionHeading scrollto={"contact"}>Got a Project?</SectionHeading>
+			<p className="text-muted-foreground py-2 max-w-[65ch]">
+				You can contact me here and I'll get an email with your message. I'll be
+				sure to respond as soon as possible!
+			</p>
+			<div>
+				<form onSubmit={handleSubmit} className="max-w-lg py-4 space-y-4">
+					<div>
+						<Label htmlFor="name">Name</Label>
+						<Input
+							onChange={handleName}
+							required
+							value={nameInput}
+							id="name"
+							placeholder="Enter your name"
+						/>
+					</div>
+					<div>
+						<Label htmlFor="email">Email</Label>
+						<Input
+							onChange={handleEmail}
+							required
+							value={emailInput}
+							id="email"
+							placeholder="Enter your email address"
+						/>
+					</div>
+					<div>
+						<Label htmlFor="message">Message</Label>
+						<Textarea
+							onChange={handleMessage}
+							required
+							value={messageInput}
+							id="message"
+							placeholder="Enter your message here"
+						/>
+						<p className="text-xs text-muted-foreground">
+							Your message will be sent directly to my email address.
+						</p>
+					</div>
+
+					<Button type="submit">Let's Discuss!</Button>
+				</form>
+			</div>
+		</section>
+	);
+}
