@@ -268,7 +268,7 @@ function Projects() {
 			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
 			<div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pr-9 sm:pr-0 max-w-screen-xl">
-					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
@@ -282,7 +282,11 @@ function Projects() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
-							<Button size="lg">Live Demo</Button>
+							<Button asChild size="lg">
+								<Link target="_blank" href={"https://hd-next13.vercel.app"}>
+									Live Demo
+								</Link>
+							</Button>
 							<Button size="lg" variant="ghost">
 								Gallery
 							</Button>
@@ -291,17 +295,17 @@ function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
-					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								donebyHD Ent.
+								null
 							</CardTitle>
 							<CardDescription>
-								Made for a client. A portfolio & branding website with a custom
-								API connected to a MySQL database. Complete CRUD API
-								functionality from a custom CMS dashboard with Google
-								authentication.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+								expedita molestiae reprehenderit. Architecto earum quae porro
+								commodi sapiente sint ea perferendis nisi, magni id. Optio
+								expedita laborum ab reiciendis. Dolor.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
@@ -314,17 +318,17 @@ function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
-					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								donebyHD Ent.
+								null
 							</CardTitle>
 							<CardDescription>
-								Made for a client. A portfolio & branding website with a custom
-								API connected to a MySQL database. Complete CRUD API
-								functionality from a custom CMS dashboard with Google
-								authentication.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+								laborum omnis reiciendis cupiditate maxime in architecto
+								consectetur earum minus accusamus. Neque harum officiis aut
+								nemo. Maxime et delectus optio ipsa.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
@@ -337,16 +341,17 @@ function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
-					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01]">
+					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								donebyHD Ent.
+								null
 							</CardTitle>
 							<CardDescription className="text-secondary/95">
-								Made for a client. A portfolio website with a custom API
-								connected to a MySQL database. API calls to create, update, and
-								delete entries from a custom CMS dashboard.
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi
+								ullam eveniet soluta quod corporis quibusdam magnam dicta
+								consequatur iste, nostrum dolore quia numquam minus culpa
+								accusantium blanditiis, provident odio eum?
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
