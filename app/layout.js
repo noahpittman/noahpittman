@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" suppressHydrationWarning className="scroll-smooth">
-			<body className={`${inter.className} dark:dark`}>
+			<body className={`${inter.className} dark:bg-[rgb(18,18,18)]`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

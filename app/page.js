@@ -126,7 +126,7 @@ function Navbar() {
 
 function Hero() {
 	return (
-		<div className="min-h-screen flex flex-col md:gap-4 gap-16">
+		<div className="min-h-screen flex flex-col md:gap-4 gap-16 mb-8 sm:mb-0">
 			<section className="space-y-4 -mt-4 md:-mt-0 py-16 md:py-24">
 				<span className="font-mono opacity-75 text-lg bg-foreground/10 p-1 px-2 rounded-md">
 					Hi, my name is
@@ -177,7 +177,7 @@ function Stack() {
 				after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)]  
 			"
 			>
-				<div className="slide-track my-4">
+				<div className="slide-track my-8">
 					{techStack.reverse().map((tech) => (
 						<div
 							key={tech}
