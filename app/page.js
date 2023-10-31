@@ -144,17 +144,17 @@ function Hero() {
 					Full Stack Developer.
 				</h2>
 				<p className="text-lg max-w-[65ch] tracking-tight">
-					I'm a Canadian full-stack developer with a passion for learning, and a
-					burning desire to do the best work possible. Check below to see some
-					of my work, or use the navigation menu above to jump to a section.
+					{
+						"I'm a Canadian full-stack developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my work, or use the navigation menu above to jump to a section."
+					}
 					<br />
 					<br />
-					When I'm not coding or working on projects, I'm making music, editing
-					video, or reading greek philosophy. Contact me if you have a project
-					you want to discuss!
+					{
+						"When I'm not coding or working on projects, I'm making music, editing video, or reading greek philosophy. Contact me if you have a project you want to discuss!"
+					}
 				</p>
 			</section>
-			<div className="">
+			<div>
 				<Stack />
 			</div>
 		</div>
@@ -404,8 +404,9 @@ function Contact() {
 		<section className="py-24" id="contact">
 			<SectionHeading scrollto={"contact"}>Got a Project?</SectionHeading>
 			<p className="text-muted-foreground py-2 max-w-[65ch]">
-				You can contact me here and I'll get an email with your message. I'll be
-				sure to respond as soon as possible!
+				{
+					"You can contact me here and I'll get an email with your message. I'll be sure to respond as soon as possible!"
+				}
 			</p>
 			<div>
 				<form onSubmit={handleSubmit} className="max-w-lg py-4 space-y-4">
@@ -443,7 +444,7 @@ function Contact() {
 						</p>
 					</div>
 
-					<Button type="submit">Let's Discuss!</Button>
+					<Button type="submit">{"Let's Discuss!"}</Button>
 				</form>
 			</div>
 		</section>
