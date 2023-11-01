@@ -77,7 +77,7 @@ function Navbar() {
 			<div className="fixed z-10 md:hidden">
 				<Sheet>
 					<SheetTrigger>
-						<div className="border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+						<div className="border border-input bg-secondary/25 backdrop-blur-sm shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
 							<HamburgerMenuIcon className="h-4 w-4" />
 						</div>
 					</SheetTrigger>
@@ -101,9 +101,11 @@ function Navbar() {
 									))}
 								</div>
 							</div>
-							<div>
+							<div className="blur-sm pointer-events-none">
 								<SheetHeader>
-									<SheetTitle className="pb-4 text-center">Resumé</SheetTitle>
+									<SheetTitle className="pb-4 text-center blur-sm pointer-events-none">
+										Resumé
+									</SheetTitle>
 								</SheetHeader>
 								<Separator className="my-4" />
 								<div className="flex flex-col gap-4">
@@ -125,7 +127,7 @@ function Navbar() {
 			</div>
 			<div className="hidden md:flex gap-4 items-center">
 				<ModeToggle />
-				<Button variant="secondary">
+				<Button variant="secondary" className="blur-sm pointer-events-none">
 					<FileIcon className="mr-2 h-4 w-4" />
 					Resumé
 				</Button>
@@ -268,17 +270,17 @@ function Projects() {
 			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
 			<div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pr-9 sm:pr-0 max-w-screen-xl">
-					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
 								donebyHD Ent.
 							</CardTitle>
 							<CardDescription>
-								Made for a client. A portfolio & branding website with a custom
-								API connected to a MySQL database. Complete CRUD API
-								functionality from a custom CMS dashboard with Google
-								authentication.
+								Made for a client. A full stack portfolio & branding website
+								complete with a total CRUD API functionality, and Google
+								authentication. Custom API connected to a MySQL database &
+								managed from a custom CMS dashboard.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
@@ -287,11 +289,20 @@ function Projects() {
 									Live Demo
 								</Link>
 							</Button>
-							<Button size="lg" variant="ghost">
+							<Button
+								size="lg"
+								variant="ghost"
+								className="blur-sm pointer-events-none"
+							>
 								Gallery
 							</Button>
-							<Button size="lg" variant="ghost">
-								Repository
+							<Button asChild size="lg" variant="ghost">
+								<Link
+									target="_blank"
+									href={"https://github.com/noahpittman/hd-entertainment"}
+								>
+									Repository
+								</Link>
 							</Button>
 						</CardContent>
 					</Card>
