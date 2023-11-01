@@ -173,6 +173,7 @@ function Stack() {
 		"HTML",
 		"CSS",
 		"JavaScript",
+		"React",
 		"TypeScript",
 		"Node.js",
 		"MySQL",
@@ -497,9 +498,21 @@ function Footer() {
 						<p>www.noahpittman.xyz</p>
 					</div>
 					<div className="w-full flex gap-12 h-12 items-center">
-						<LinkedInLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
-						<InstagramLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
-						<TwitterLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.1]" />
+						<Link
+							href={"https://www.linkedin.com/in/noahrileypittman/"}
+							target="_blank"
+						>
+							<LinkedInLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.15]" />
+						</Link>
+						<Link
+							href={"https://www.instagram.com/noahpittman.digital/"}
+							target="_blank"
+						>
+							<InstagramLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.15]" />
+						</Link>
+						<Link href={"https://www.twitter.com/n0ahpittman/"} target="_blank">
+							<TwitterLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.15]" />
+						</Link>
 					</div>
 				</div>
 			</div>
