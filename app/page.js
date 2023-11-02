@@ -363,11 +363,14 @@ function Projects() {
 							<CardDescription className="text-secondary/95">
 								My own portfolio of course! Made with Next.js, and a few
 								JavaScript libraries, this website features static HTML
-								generation, a rich UI, and static blog pages from markdown files
+								generation, a rich UI, and
+								<span className="blur-sm">
+									static blog pages from markdown files
+								</span>
 								(created with{" "}
 								<Link
 									target="_blank"
-									className="underline hover:text-muted-foreground"
+									className="underline hover:text-muted-foreground blur-sm pointer-events-none"
 									href={"/#projects"}
 								>
 									my own markdown editor
