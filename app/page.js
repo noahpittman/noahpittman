@@ -176,6 +176,7 @@ function Stack() {
 		"React",
 		"TypeScript",
 		"Node.js",
+		"Express",
 		"MySQL",
 		"UI/UX",
 	];
@@ -479,6 +480,19 @@ function Footer() {
 		{ value: "www.noahpittman.xyz", logo: "website" },
 	];
 
+	const tools = [
+		{
+			name: "summaraize",
+			href: "https://trysummaraize.vercel.app/",
+			value: "AI Article Summarizer",
+		},
+		// {
+		// 	name: "mdeditor",
+		// 	href: "",
+		// 	value: "Markdown Editor",
+		// },
+	];
+
 	return (
 		<div
 			className="w-full mt-12 p-4 border-t border-t-muted-foreground flex min-h-52 flex-col sm:flex-row"
@@ -556,19 +570,16 @@ function Footer() {
 
 				<div className="flex flex-col space-y-1">
 					<p className="font-semibold underline underline-offset-4">Tools</p>
-					<Link
-						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"https://trysummaraize.vercel.app/"}
-						target="_blank"
-					>
-						AI Article Summarizer
-					</Link>
-					{/* <Link
+					{tools.map((tool) => (
+						<Link
+							key={tool.name}
 							className="text-muted-foreground hover:text-primary transition-colors w-fit"
-							href={"/"}
+							href={tool.href}
+							target="_blank"
 						>
-							Markdown Editor
-						</Link> */}
+							{tool.value}
+						</Link>
+					))}
 					<p className="text-muted-foreground text-sm">To be continued...</p>
 				</div>
 			</div>
