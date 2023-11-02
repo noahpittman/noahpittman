@@ -493,6 +493,34 @@ function Footer() {
 		// },
 	];
 
+	const navigation = [
+		{
+			name: "home",
+			href: "/",
+			value: "Home",
+		},
+		{
+			name: "projects",
+			href: "/#projects",
+			value: "Projects",
+		},
+		{
+			name: "blog",
+			href: "/#blog",
+			value: "Blog",
+		},
+		{
+			name: "allposts",
+			href: "/#blog",
+			value: "╰ All Blog Posts (Under Development)",
+		},
+		{
+			name: "contact",
+			href: "/#contact",
+			value: "Contact",
+		},
+	];
+
 	return (
 		<div
 			className="w-full mt-12 p-4 border-t border-t-muted-foreground flex min-h-52 flex-col sm:flex-row"
@@ -530,42 +558,23 @@ function Footer() {
 					</div>
 				</div>
 			</div>
+
 			<Separator className="sm:w-[1px] sm:h-52 sm:mx-4" />
+
 			<div className="sm:p-4 pt-4 sm:pt-0 flex flex-col sm:flex-row flex-wrap gap-12 sm:gap-16">
 				<div className="flex flex-col space-y-1">
 					<p className="font-semibold underline underline-offset-4">
 						Navigation
 					</p>
-					<Link
-						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"/"}
-					>
-						Home
-					</Link>
-					<Link
-						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"/#projects"}
-					>
-						Projects
-					</Link>
-					<Link
-						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"/#blog"}
-					>
-						Blog
-					</Link>
-					<Link
-						className="text-muted-foreground flex hover:text-primary transition-colors w-fit"
-						href={"/#blog"}
-					>
-						<CornerBottomLeftIcon /> All Blog Posts (Under Development)
-					</Link>
-					<Link
-						className="text-muted-foreground hover:text-primary transition-colors w-fit"
-						href={"/#contact"}
-					>
-						Contact
-					</Link>
+					{navigation.map((route) => (
+						<Link
+							className="text-muted-foreground hover:text-primary transition-colors w-fit"
+							href={route.href}
+							key={route.name}
+						>
+							{route.value}
+						</Link>
+					))}
 				</div>
 
 				<div className="flex flex-col space-y-1">
