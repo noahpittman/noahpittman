@@ -5,6 +5,7 @@ import {
 	CornerBottomLeftIcon,
 	EnvelopeClosedIcon,
 	FileIcon,
+	GitHubLogoIcon,
 	GlobeIcon,
 	HamburgerMenuIcon,
 	InstagramLogoIcon,
@@ -127,6 +128,12 @@ function Navbar() {
 			</div>
 			<div className="hidden md:flex gap-4 items-center">
 				<ModeToggle />
+				<Button asChild target="_blank" variant="outline">
+					<Link href={"https://github.com/noahpittman"}>
+						<GitHubLogoIcon className="mr-2 h-4 w-4" />
+						GitHub
+					</Link>
+				</Button>
 				<Button variant="secondary" className="blur-sm pointer-events-none">
 					<FileIcon className="mr-2 h-4 w-4" />
 					Resumé
@@ -561,6 +568,9 @@ function Footer() {
 							target="_blank"
 						>
 							<LinkedInLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.15]" />
+						</Link>
+						<Link href={"https://github.com/noahpittman"} target="_blank">
+							<GitHubLogoIcon className="h-6 w-6 transition-all md:hover:scale-[1.15]" />
 						</Link>
 						<Link
 							href={"https://www.instagram.com/noahpittman.digital/"}
