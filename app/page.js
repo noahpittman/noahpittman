@@ -354,28 +354,41 @@ function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
-					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
+					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01] ">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								null
+								noahpittman.xyz
 							</CardTitle>
 							<CardDescription className="text-secondary/95">
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi
-								ullam eveniet soluta quod corporis quibusdam magnam dicta
-								consequatur iste, nostrum dolore quia numquam minus culpa
-								accusantium blanditiis, provident odio eum?
+								My own portfolio of course! Made with Next.js, and a few
+								JavaScript libraries, this website features static HTML
+								generation, a rich UI, and static blog pages from markdown files
+								(created with{" "}
+								<Link
+									target="_blank"
+									className="underline hover:text-muted-foreground"
+									href={"/#projects"}
+								>
+									my own markdown editor
+								</Link>
+								).
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
-							<Button size="lg" variant="secondary">
+							<Button size="lg" variant="secondary" disabled>
 								Live Demo
 							</Button>
-							<Button size="lg" variant="ghost">
+							<Button size="lg" variant="ghost" disabled>
 								Gallery
 							</Button>
-							<Button size="lg" variant="ghost">
-								Repository
+							<Button asChild size="lg" variant="ghost">
+								<Link
+									target="_blank"
+									href={"https://github.com/noahpittman/noahpittman"}
+								>
+									Repository
+								</Link>
 							</Button>
 						</CardContent>
 					</Card>
