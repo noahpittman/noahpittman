@@ -153,11 +153,11 @@ function Hero() {
 					<span className="pl-4 text-4xl md:text-6xl opacity-100">👋</span>
 				</h1>
 				<h2 className="text-3xl md:text-4xl tracking-tight md:gap-4 flex flex-col md:flex-row opacity-80">
-					Full Stack Developer.
+					Built from scratch.
 				</h2>
 				<p className="text-lg max-w-[65ch] tracking-tight">
 					{
-						"I'm a Canadian full-stack developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my work."
+						"I'm a self-taught full stack web developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my projects."
 					}
 					<br />
 					<br />
@@ -192,9 +192,9 @@ function Stack() {
 				className="
 					slider max-w-screen-lg mx-auto pointer-events-none relative w-full grid place-items-center overflow-hidden
 
-					before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
+					before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0
 
-					after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)]
+					after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0
 				"
 			>
 				<div className="slide-track my-8">
@@ -236,9 +236,9 @@ function Stack() {
 				className="
 						slider max-w-screen-lg mx-auto relative w-full grid place-items-center overflow-hidden pointer-events-none
 
-						before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
+						before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0
 						
-						after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)] 
+						after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0
 					"
 			>
 				<div className="slide-track2 my-4">
@@ -518,7 +518,7 @@ function Footer() {
 	const navigation = [
 		{
 			name: "home",
-			href: "/",
+			href: "/#home",
 			value: "Home",
 		},
 		{
