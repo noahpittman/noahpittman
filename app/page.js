@@ -157,7 +157,7 @@ function Hero() {
 				</h2>
 				<p className="text-lg max-w-[65ch] tracking-tight">
 					{
-						"I'm a Canadian full-stack developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my work, or use the navigation menu above to jump to a section."
+						"I'm a Canadian full-stack developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my work."
 					}
 					<br />
 					<br />
@@ -189,12 +189,13 @@ function Stack() {
 	return (
 		<>
 			<div
-				className="slider max-w-screen-lg mx-auto pointer-events-none
+				className="
+					slider max-w-screen-lg mx-auto pointer-events-none relative w-full grid place-items-center overflow-hidden
 
-				relative w-full grid place-items-center overflow-hidden
-				before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
-				after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)]  
-			"
+					before:absolute before:bg-gradient-to-r before:from-background before:h-full before:w-1/4 before:z-[2] before:pointer-events-none before:left-0 before:top-0 dark:before:from-[rgb(18,18,18)]
+
+					after:absolute after:bg-gradient-to-r after:from-background after:h-full after:w-1/4 after:z-[2] after:pointer-events-none after:right-0 after:top-0 dark:after:from-[rgb(18,18,18)]
+				"
 			>
 				<div className="slide-track my-8">
 					{techStack.reverse().map((tech) => (
