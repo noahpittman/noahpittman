@@ -11,6 +11,7 @@ import {
 	LinkedInLogoIcon,
 	TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import emailjs from "@emailjs/browser";
 import {
 	Sheet,
 	SheetContent,
@@ -30,7 +31,7 @@ import {
 } from "@/components/ui/card";
 
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import SectionHeading from "@/components/SectionHeading";
@@ -282,7 +283,7 @@ function Projects() {
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								donebyHD Ent.
+								donebyHD<span className="opacity-50">.com</span>
 							</CardTitle>
 							<CardDescription>
 								Made for a client. A full stack portfolio & branding website
@@ -293,7 +294,7 @@ function Projects() {
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
 							<Button asChild size="lg">
-								<Link target="_blank" href={"https://hd-next13.vercel.app"}>
+								<Link target="_blank" href={"https://donebyhd.com"}>
 									Live Demo
 								</Link>
 							</Button>
@@ -428,21 +429,29 @@ function Contact() {
 		setMessageInput("");
 	};
 
-	const handleSubmit = (e) => {
+	const form = useRef();
+
+	const sendEmail = (e) => {
 		e.preventDefault();
-		try {
-			throw new Error("err");
-			console.log({
-				name: nameInput,
-				email: emailInput,
-				message: messageInput,
-			});
-			clearForm();
-			toast.success("Email successfully sent!");
-		} catch (error) {
-			toast.error("This is still in development.");
-			// toast.error("Something went wrong. \n Please try again later.");
-		}
+
+		emailjs
+			.sendForm(
+				"noahpittman",
+				"noahpittman_template",
+				form.current,
+				"OUH8QIDn0ceYoUaiW"
+			)
+			.then(
+				(result) => {
+					// console.log(result.text);
+					toast.success("Email sent!");
+					clearForm();
+				},
+				(error) => {
+					// console.log(error.text);
+					toast.error("Something went wrong.");
+				}
+			);
 	};
 
 	return (
@@ -454,7 +463,11 @@ function Contact() {
 				}
 			</p>
 			<div>
-				<form onSubmit={handleSubmit} className="max-w-lg py-4 space-y-4">
+				<form
+					ref={form}
+					onSubmit={sendEmail}
+					className="max-w-lg py-4 space-y-4"
+				>
 					<div>
 						<Label htmlFor="name">Name</Label>
 						<Input
@@ -462,6 +475,8 @@ function Contact() {
 							required
 							value={nameInput}
 							id="name"
+							name="user_name"
+							autoComplete="given-name"
 							placeholder="Enter your name"
 						/>
 					</div>
@@ -471,6 +486,9 @@ function Contact() {
 							onChange={handleEmail}
 							required
 							value={emailInput}
+							type="text"
+							name="user_email"
+							autoComplete="email"
 							id="email"
 							placeholder="Enter your email address"
 						/>
@@ -483,6 +501,8 @@ function Contact() {
 							value={messageInput}
 							id="message"
 							placeholder="Enter your message here"
+							name="message"
+							rows={4}
 						/>
 						<p className="text-xs text-muted-foreground">
 							Your message will be sent directly to my email address.
