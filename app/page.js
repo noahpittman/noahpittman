@@ -39,20 +39,17 @@ import toast from "react-hot-toast";
 
 export default function Home() {
 	return (
-		<div
-			className="flex min-h-screen flex-col p-10 md:p-24 max-w-screen-2xl mx-auto"
-			id="home"
-		>
+		<>
 			<Navbar />
 			<Hero />
 			<Projects />
 			<Contact />
 			<Footer />
-		</div>
+		</>
 	);
 }
 
-function Navbar() {
+export function Navbar({ linksOnly }) {
 	const navigation = [
 		{ route: "/#home", name: "Home" },
 		{ route: "/#projects", name: "Projects" },
@@ -61,7 +58,7 @@ function Navbar() {
 	];
 
 	return (
-		<header className="flex flex-wrap-reverse w-full justify-end md:justify-between items-center gap-4">
+		<header className="flex flex-wrap w-full justify-end md:justify-between items-center gap-4">
 			<div className="hidden md:flex gap-2">
 				{navigation.map((route) => (
 					<div key={route.name} className="flex">
@@ -125,24 +122,26 @@ function Navbar() {
 					</div>
 				</Sheet>
 			</div>
-			<div className="hidden md:flex gap-4 items-center">
-				<ModeToggle />
-				<Button asChild target="_blank" variant="outline">
-					<Link href={"https://github.com/noahpittman"}>
-						<GitHubLogoIcon className="mr-2 h-4 w-4" />
-						GitHub
-					</Link>
-				</Button>
-				<Button variant="secondary" className="blur-sm pointer-events-none">
-					<FileIcon className="mr-2 h-4 w-4" />
-					Resumé
-				</Button>
-			</div>
+			{!linksOnly && (
+				<div className="hidden md:flex gap-4 items-center">
+					<ModeToggle />
+					<Button asChild target="_blank" variant="outline">
+						<Link href={"https://github.com/noahpittman"}>
+							<GitHubLogoIcon className="mr-2 h-4 w-4" />
+							GitHub
+						</Link>
+					</Button>
+					<Button variant="secondary" className="blur-sm pointer-events-none">
+						<FileIcon className="mr-2 h-4 w-4" />
+						Resumé
+					</Button>
+				</div>
+			)}
 		</header>
 	);
 }
 
-function Hero() {
+export function Hero() {
 	return (
 		<div className="min-h-screen flex flex-col md:gap-4 gap-16 mb-8 sm:mb-0">
 			<section className="space-y-4 -mt-4 md:-mt-0 pt-16 md:pb-12 md:py-24">
@@ -174,7 +173,7 @@ function Hero() {
 	);
 }
 
-function Stack() {
+export function Stack() {
 	const techStack = [
 		"HTML",
 		"CSS",
@@ -273,7 +272,7 @@ function Stack() {
 	);
 }
 
-function Projects() {
+export function Projects() {
 	return (
 		<div id="projects" className="space-y-12 pt-2">
 			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
@@ -408,7 +407,7 @@ function Projects() {
 	);
 }
 
-function Contact() {
+export function Contact() {
 	const [nameInput, setNameInput] = useState("");
 	const [emailInput, setEmailInput] = useState("");
 	const [messageInput, setMessageInput] = useState("");
@@ -516,7 +515,7 @@ function Contact() {
 	);
 }
 
-function Footer() {
+export function Footer() {
 	const contactInfo = [
 		{ value: "noahpittman00@gmail.com", logo: "" },
 		{ value: "www.noahpittman.xyz", logo: "website" },

@@ -23,7 +23,12 @@ export default function RootLayout({ children }) {
 					storageKey="site-theme"
 				>
 					<Toaster position="top-center" />
-					{children}
+					<div
+						className="flex min-h-screen flex-col p-10 md:p-24 max-w-screen-2xl mx-auto"
+						id="home"
+					>
+						{children}
+					</div>
 				</ThemeProvider>
 			</body>
 		</html>
