@@ -376,8 +376,8 @@ export function Projects() {
 								(created with{" "}
 								<Link
 									target="_blank"
-									className="underline hover:text-muted-foreground blur-sm pointer-events-none"
-									href={"/#projects"}
+									className="underline hover:text-muted-foreground"
+									href={"https://markdown-editor-nrp.vercel.app/"}
 								>
 									my own markdown editor
 								</Link>
@@ -527,11 +527,11 @@ export function Footer() {
 			href: "https://trysummaraize.vercel.app/",
 			value: "AI Article Summarizer",
 		},
-		// {
-		// 	name: "mdeditor",
-		// 	href: "",
-		// 	value: "Markdown Editor",
-		// },
+		{
+			name: "mdeditor",
+			href: "https://markdown-editor-nrp.vercel.app/",
+			value: "Markdown Editor",
+		},
 	];
 
 	const navigation = [
