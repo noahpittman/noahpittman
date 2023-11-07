@@ -98,22 +98,15 @@ export function Navbar({ linksOnly }) {
 									))}
 								</div>
 							</div>
-							<div className="blur-sm pointer-events-none">
+							<div>
 								<SheetHeader>
-									<SheetTitle className="pb-4 text-center blur-sm pointer-events-none">
-										Resumé
-									</SheetTitle>
+									<SheetTitle className="pb-4 text-center">Resumé</SheetTitle>
 								</SheetHeader>
 								<Separator className="my-4" />
 								<div className="flex flex-col gap-4">
 									<Button asChild variant="ghost" size="lg">
-										<Link scroll href={"/"}>
+										<Link target="_blank" href={"/MyResume.pdf"}>
 											View
-										</Link>
-									</Button>
-									<Button asChild variant="ghost" size="lg">
-										<Link scroll href={"/"}>
-											Download
 										</Link>
 									</Button>
 								</div>
@@ -131,9 +124,11 @@ export function Navbar({ linksOnly }) {
 							GitHub
 						</Link>
 					</Button>
-					<Button variant="secondary" className="blur-sm pointer-events-none">
-						<FileIcon className="mr-2 h-4 w-4" />
-						Resumé
+					<Button asChild variant="secondary">
+						<Link target="_blank" href={"/MyResume.pdf"}>
+							<FileIcon className="mr-2 h-4 w-4" />
+							Resumé
+						</Link>
 					</Button>
 				</div>
 			)}
@@ -371,17 +366,8 @@ export function Projects() {
 								JavaScript libraries, this website features static HTML
 								generation, a rich UI, and
 								<span className="blur-sm">
-									static blog pages from markdown files
+									static blog pages from markdown files.
 								</span>
-								(created with{" "}
-								<Link
-									target="_blank"
-									className="underline hover:text-muted-foreground"
-									href={"https://markdown-editor-nrp.vercel.app/"}
-								>
-									my own markdown editor
-								</Link>
-								).
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
