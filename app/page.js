@@ -54,7 +54,7 @@ export function Navbar({ linksOnly }) {
 	const navigation = [
 		{ route: "/#home", name: "Home" },
 		{ route: "/#projects", name: "Projects" },
-		{ route: "/#blog", name: "Blog" },
+		// { route: "/#blog", name: "Blog" },
 		{ route: "/#contact", name: "Contact" },
 	];
 
