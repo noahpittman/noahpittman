@@ -43,6 +43,7 @@ export default function Home() {
 			<Navbar />
 			<Hero />
 			<Projects />
+			{/* <Blog /> */}
 			<Contact />
 			<Footer />
 		</>
@@ -393,6 +394,8 @@ export function Projects() {
 	);
 }
 
+export function Blog() {}
+
 export function Contact() {
 	const [nameInput, setNameInput] = useState("");
 	const [emailInput, setEmailInput] = useState("");
@@ -536,11 +539,11 @@ export function Footer() {
 			href: "/#blog",
 			value: "Blog",
 		},
-		{
-			name: "allposts",
-			href: "/#blog",
-			value: "╰ All Blog Posts (Under Development)",
-		},
+		// {
+		// 	name: "allposts",
+		// 	href: "/blog",
+		// 	value: "╰ All Blog Posts (Under Development)",
+		// },
 		{
 			name: "contact",
 			href: "/#contact",
