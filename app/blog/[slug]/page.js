@@ -1,7 +1,7 @@
 import { format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { Navbar } from "../../../components/Navbar";
-import { Button } from "@/components/ui/Button";
+import { Button } from "/components/ui/button.jsx";
 import Link from "next/link";
 import "./blog.css";
 
