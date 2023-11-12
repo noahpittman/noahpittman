@@ -2,27 +2,7 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { Navbar } from "../../components/Navbar";
-
-function PostCard(post) {
-	return (
-		<div className="mb-8 border p-4 rounded-md shadow-sm border-muted">
-			<h2 className="mb-1 text-xl space-x-4">
-				<Link
-					href={post.url}
-					className="text-foreground hover:text-foreground/50	transition-all underline"
-				>
-					{post.title}
-				</Link>
-			</h2>
-			<time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-				{format(parseISO(post.date), "LLLL d, yyyy")}
-			</time>
-			<div className="line-clamp-3 sm:text-normal text-sm text-muted-foreground">
-				{post.description}
-			</div>
-		</div>
-	);
-}
+import Footer from "../../components/Footer";
 
 export default function Home() {
 	const posts = allPosts.sort((a, b) =>
@@ -32,8 +12,7 @@ export default function Home() {
 	return (
 		<>
 			<Navbar />
-
-			<div className="md:mt-16">
+			<div className="md:mt-16 min-h-[24rem]">
 				<h1 className="text-xl font-bold">
 					Blog<span className="text-muted-foreground">: Latest Posts</span>
 				</h1>
@@ -44,6 +23,30 @@ export default function Home() {
 					{posts.map((post, idx) => (
 						<PostCard key={idx} {...post} />
 					))}
+				</div>
+			</div>
+			<Footer />
+		</>
+	);
+}
+
+function PostCard(post) {
+	return (
+		<>
+			<div className="mb-8 border p-4 rounded-md shadow-sm border-muted">
+				<h2 className="mb-1 text-xl space-x-4">
+					<Link
+						href={post.url}
+						className="text-foreground hover:text-foreground/50	transition-all underline"
+					>
+						{post.title}
+					</Link>
+				</h2>
+				<time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
+					{format(parseISO(post.date), "LLLL d, yyyy")}
+				</time>
+				<div className="line-clamp-3 sm:text-normal text-sm text-muted-foreground">
+					{post.description}
 				</div>
 			</div>
 		</>

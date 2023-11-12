@@ -4,6 +4,7 @@ import { Navbar } from "../../../components/Navbar";
 import { Button } from "/components/ui/button.jsx";
 import Link from "next/link";
 import "./blog.css";
+import Footer from "../../../components/Footer";
 
 export const generateStaticParams = async () =>
 	allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -44,6 +45,7 @@ const PostLayout = ({ params }) => {
 					dangerouslySetInnerHTML={{ __html: post.body.html }}
 				/>
 			</article>
+			<Footer />
 		</>
 	);
 };
