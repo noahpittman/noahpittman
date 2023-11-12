@@ -208,6 +208,7 @@ export function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
+
 					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
@@ -231,6 +232,7 @@ export function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
+
 					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
@@ -254,6 +256,7 @@ export function Projects() {
 							</Button>
 						</CardContent>
 					</Card>
+
 					<Card className="bg-primary/90 text-secondary lg:aspect-video dark:border-secondary transition-all lg:hover:scale-[1.01] ">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
@@ -263,10 +266,14 @@ export function Projects() {
 							<CardDescription className="text-secondary/95">
 								My own portfolio of course! Made with Next.js, and a few
 								JavaScript libraries, this website features static HTML
-								generation, a rich UI, and
-								<span className="blur-sm">
-									static blog pages from markdown files.
-								</span>
+								generation, a rich UI, and{" "}
+								<Link
+									href={"/blog"}
+									className="underline decoration-muted-foreground hover:text-muted-foreground transition-colors"
+								>
+									static blog pages
+								</Link>{" "}
+								generated at build time from markdown files.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
