@@ -422,11 +422,29 @@ export function Footer() {
 			href: "https://trysummaraize.vercel.app/",
 			value: "AI Article Summarizer",
 		},
+		// {
+		// 	name: "mdeditor",
+		// 	href: "https://markdown-editor-nrp.vercel.app/",
+		// 	value: "Markdown Editor",
+		// },
+	];
+
+	const projects = [
 		{
-			name: "mdeditor",
-			href: "https://markdown-editor-nrp.vercel.app/",
-			value: "Markdown Editor",
+			name: "wavlee",
+			href: "https://wavlee.com",
+			value: "wavlee.com",
 		},
+		{
+			name: "hd",
+			href: "https://donebyhd.com",
+			value: "donebyhd.com",
+		},
+		// {
+		// 	name: "mdeditor",
+		// 	href: "https://markdown-editor-nrp.vercel.app/",
+		// 	value: "Markdown Editor",
+		// },
 	];
 
 	const navigation = [
@@ -514,6 +532,21 @@ export function Footer() {
 							{route.value}
 						</Link>
 					))}
+				</div>
+
+				<div className="flex flex-col space-y-1">
+					<p className="font-semibold underline underline-offset-4">Tools</p>
+					{tools.map((tool) => (
+						<Link
+							key={tool.name}
+							className="text-muted-foreground hover:text-primary transition-colors w-fit"
+							href={tool.href}
+							target="_blank"
+						>
+							{tool.value}
+						</Link>
+					))}
+					<p className="text-muted-foreground text-sm">To be continued...</p>
 				</div>
 
 				<div className="flex flex-col space-y-1">
