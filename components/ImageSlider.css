@@ -1,0 +1,6 @@
+.thumbnail .keen-slider__slide.active {
+	border: 2px solid black;
+}
+.dark .thumbnail .keen-slider__slide.active {
+	border: 2px solid white;
+}

@@ -21,6 +21,7 @@ import SectionHeading from "@/components/SectionHeading";
 import toast from "react-hot-toast";
 import { Navbar } from "../components/Navbar";
 import Footer from "../components/Footer";
+import GalleryDialog from "../components/GalleryDialog";
 
 export default function Home() {
 	return (
@@ -167,6 +168,13 @@ export function Stack() {
 }
 
 export function Projects() {
+	const hdGallery = [
+		"/donebyHD_gallery/Home.png",
+		"/donebyHD_gallery/AboutPage.png",
+		"/donebyHD_gallery/Portfolio.png",
+		"/donebyHD_gallery/Contact.png",
+	];
+
 	return (
 		<div id="projects" className="space-y-12 pt-2">
 			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
@@ -191,13 +199,9 @@ export function Projects() {
 									Live Demo
 								</Link>
 							</Button>
-							<Button
-								size="lg"
-								variant="ghost"
-								className="blur-sm pointer-events-none"
-							>
-								Gallery
-							</Button>
+
+							<GalleryDialog name="donebyHD" hrefArray={hdGallery} />
+
 							<Button asChild size="lg" variant="ghost">
 								<Link
 									target="_blank"
