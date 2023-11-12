@@ -299,7 +299,7 @@ export function Projects() {
 	);
 }
 
-export function Blog() {}
+// export function Blog() {}
 
 export function Contact() {
 	const [nameInput, setNameInput] = useState("");
