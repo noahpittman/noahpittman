@@ -1,4 +1,4 @@
-import { Navbar } from "./page";
+import { Navbar } from "../components/Navbar";
 
 export const metadata = {
 	title: "404 Not Found",

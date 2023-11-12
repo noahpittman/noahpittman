@@ -6,21 +6,13 @@ import {
 	FileIcon,
 	GitHubLogoIcon,
 	GlobeIcon,
-	HamburgerMenuIcon,
 	InstagramLogoIcon,
 	LinkedInLogoIcon,
 	TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import emailjs from "@emailjs/browser";
-import {
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from "@/components/ui/sheet";
+
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import {
 	Card,
@@ -36,6 +28,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import SectionHeading from "@/components/SectionHeading";
 import toast from "react-hot-toast";
+import { Navbar } from "../components/Navbar";
 
 export default function Home() {
 	return (
@@ -50,96 +43,9 @@ export default function Home() {
 	);
 }
 
-export function Navbar({ linksOnly }) {
-	const navigation = [
-		{ route: "/#home", name: "Home" },
-		{ route: "/#projects", name: "Projects" },
-		// { route: "/#blog", name: "Blog" },
-		{ route: "/#contact", name: "Contact" },
-	];
-
-	return (
-		<header className="flex flex-wrap w-full justify-end md:justify-between items-center gap-4">
-			<div className="hidden md:flex gap-2">
-				{navigation.map((route) => (
-					<div key={route.name} className="flex">
-						<Button variant="ghost" asChild>
-							<Link scroll href={route.route}>
-								{route.name}
-							</Link>
-						</Button>
-						<Separator className="ml-2" orientation="vertical" />
-					</div>
-				))}
-			</div>
-			<div className="fixed z-10 md:hidden">
-				<Sheet>
-					<SheetTrigger>
-						<div className="border border-input bg-secondary/25 backdrop-blur-sm shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-							<HamburgerMenuIcon className="h-4 w-4" />
-						</div>
-					</SheetTrigger>
-
-					<div className="space-y-4">
-						<SheetContent>
-							<div className="pb-20">
-								<SheetHeader>
-									<SheetTitle className="pb-4 text-center">
-										Navigation
-									</SheetTitle>
-								</SheetHeader>
-								<Separator className="my-4" />
-								<div className="flex flex-col gap-4">
-									{navigation.map((route) => (
-										<Button key={route.name} asChild variant="ghost" size="lg">
-											<Link scroll href={route.route}>
-												{route.name}
-											</Link>
-										</Button>
-									))}
-								</div>
-							</div>
-							<div>
-								<SheetHeader>
-									<SheetTitle className="pb-4 text-center">Resumé</SheetTitle>
-								</SheetHeader>
-								<Separator className="my-4" />
-								<div className="flex flex-col gap-4">
-									<Button asChild variant="ghost" size="lg">
-										<Link target="_blank" href={"/MyResume.pdf"}>
-											View
-										</Link>
-									</Button>
-								</div>
-							</div>
-						</SheetContent>
-					</div>
-				</Sheet>
-			</div>
-			{!linksOnly && (
-				<div className="hidden md:flex gap-4 items-center">
-					<ModeToggle />
-					<Button asChild target="_blank" variant="outline">
-						<Link href={"https://github.com/noahpittman"}>
-							<GitHubLogoIcon className="mr-2 h-4 w-4" />
-							GitHub
-						</Link>
-					</Button>
-					<Button asChild variant="secondary">
-						<Link target="_blank" href={"/MyResume.pdf"}>
-							<FileIcon className="mr-2 h-4 w-4" />
-							Resumé
-						</Link>
-					</Button>
-				</div>
-			)}
-		</header>
-	);
-}
-
 export function Hero() {
 	return (
-		<div className="min-h-screen flex flex-col md:gap-4 gap-16 mb-8 sm:mb-0">
+		<div className="min-h-screen flex flex-col md:gap-4 gap-16 mb-8 sm:mb-0 ">
 			<section className="space-y-4 -mt-4 md:-mt-0 pt-16 md:pb-12 md:py-24">
 				<span className="font-mono opacity-75 text-lg bg-foreground/10 p-1 px-2 rounded-md">
 					Hi, my name is
@@ -148,10 +54,10 @@ export function Hero() {
 					Noah Pittman.
 					<span className="pl-4 text-4xl md:text-6xl opacity-100">👋</span>
 				</h1>
-				<h2 className="text-3xl md:text-4xl tracking-tight md:gap-4 flex flex-col md:flex-row opacity-80">
+				<h2 className="text-2xl md:text-4xl tracking-tight md:gap-4 flex flex-col md:flex-row opacity-80">
 					Built from scratch.
 				</h2>
-				<p className="text-lg max-w-[65ch] tracking-tight">
+				<p className="sm:text-lg max-w-prose tracking-tight">
 					{
 						"I'm a self-taught full stack web developer with a passion for learning, and a burning desire to create the best work possible. Check below to see some of my projects."
 					}
@@ -273,7 +179,7 @@ export function Projects() {
 		<div id="projects" className="space-y-12 pt-2">
 			<SectionHeading scrollto={"projects"}>Projects</SectionHeading>
 			<div>
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pr-9 sm:pr-0 max-w-screen-xl">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:pr-0 max-w-screen-xl">
 					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
