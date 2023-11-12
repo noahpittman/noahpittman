@@ -32,13 +32,16 @@ const PostLayout = ({ params }) => {
 			<article className="p-4 md:pt-16">
 				<div className="mb-8">
 					<h1 className="text-2xl md:text-3xl font-bold">{post.title}</h1>
-					<p className="text-muted-foreground text-sm">{post.description}</p>
+					<p className="text-muted-foreground text-sm max-w-prose">
+						{post.description}
+					</p>
 					<time
 						dateTime={post.date}
 						className="mb-1 text-xs text-muted-foreground/60"
 					>
 						{format(parseISO(post.date), "LLLL d, yyyy")}
 					</time>
+					<div className="w-full h-[1px] border-b border-b-muted-foreground/50 pt-4" />
 				</div>
 				<div
 					className="[&>*]:mb-3 [&>*:last-child]:mb-0 max-w-[65ch]"

@@ -130,13 +130,6 @@
 		}
 	}
 }
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h7 {
-	font-size: initial;
-} */
+blockquote {
+	@apply mx-4 my-8 py-2 pl-4 text-muted-foreground border-l;
+}

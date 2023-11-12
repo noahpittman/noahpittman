@@ -34,14 +34,14 @@ function PostCard(post) {
 	return (
 		<>
 			<div className="mb-8 border p-4 rounded-md shadow-sm border-muted">
-				<h2 className="mb-1 text-xl space-x-4">
+				<div className="mb-1 text-xl space-x-4 font-semibold">
 					<Link
 						href={post.url}
 						className="text-foreground hover:text-foreground/50	transition-all underline"
 					>
 						{post.title}
 					</Link>
-				</h2>
+				</div>
 				<time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
 					{format(parseISO(post.date), "LLLL d, yyyy")}
 				</time>
