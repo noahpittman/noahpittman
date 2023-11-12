@@ -13,12 +13,7 @@ import ImageSlider from "./ImageSlider";
 const GalleryDialog = ({ name, hrefArray }) => {
 	return (
 		<Dialog>
-			<Button
-				asChild
-				size="lg"
-				variant="ghost"
-				// className="blur-sm pointer-events-none"
-			>
+			<Button asChild size="lg" variant="ghost">
 				<DialogTrigger className="w-full">Gallery</DialogTrigger>
 			</Button>
 			<DialogContent>
