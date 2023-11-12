@@ -10,11 +10,6 @@ import {
 } from "@radix-ui/react-icons";
 
 const Footer = () => {
-	const contactInfo = [
-		{ value: "noahpittman00@gmail.com", logo: "" },
-		{ value: "www.noahpittman.xyz", logo: "website" },
-	];
-
 	const tools = [
 		{
 			name: "summaraize",
@@ -39,11 +34,6 @@ const Footer = () => {
 			href: "https://donebyhd.com",
 			value: "donebyhd.com",
 		},
-		// {
-		// 	name: "mdeditor",
-		// 	href: "https://markdown-editor-nrp.vercel.app/",
-		// 	value: "Markdown Editor",
-		// },
 	];
 
 	const navigation = [
@@ -58,19 +48,14 @@ const Footer = () => {
 			value: "Projects",
 		},
 		{
-			name: "blog",
-			href: "/#blog",
-			value: "Blog",
-		},
-		// {
-		// 	name: "allposts",
-		// 	href: "/blog",
-		// 	value: "╰ All Blog Posts (Under Development)",
-		// },
-		{
 			name: "contact",
 			href: "/#contact",
 			value: "Contact",
+		},
+		{
+			name: "blog",
+			href: "/blog",
+			value: "Blog",
 		},
 	];
 
@@ -149,18 +134,17 @@ const Footer = () => {
 				</div>
 
 				<div className="flex flex-col space-y-1">
-					<p className="font-semibold underline underline-offset-4">Tools</p>
-					{tools.map((tool) => (
+					<p className="font-semibold underline underline-offset-4">Projects</p>
+					{projects.map((project) => (
 						<Link
-							key={tool.name}
+							key={project.name}
 							className="text-muted-foreground hover:text-primary transition-colors w-fit"
-							href={tool.href}
+							href={project.href}
 							target="_blank"
 						>
-							{tool.value}
+							{project.value}
 						</Link>
 					))}
-					<p className="text-muted-foreground text-sm">To be continued...</p>
 				</div>
 			</div>
 		</div>
