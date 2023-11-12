@@ -20,7 +20,7 @@ const PostLayout = ({ params }) => {
 	if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
 	return (
-		<>
+		<div className="max-w-screen-md mx-auto">
 			<div className="flex gap-8">
 				<Navbar linksOnly />
 				<Button asChild variant="outline" size="lg">
@@ -29,18 +29,31 @@ const PostLayout = ({ params }) => {
 					</Link>
 				</Button>
 			</div>
+			<Button asChild variant="outline" className="-mt-4" size="lg">
+				<Link className="md:hidden flex" href={"/blog"}>
+					Back to Posts
+				</Link>
+			</Button>
 			<article className="p-4 md:pt-16">
-				<div className="mb-8">
+				<div className="mb-8 space-y-2">
 					<h1 className="text-2xl md:text-3xl font-bold">{post.title}</h1>
 					<p className="text-muted-foreground text-sm max-w-prose">
 						{post.description}
 					</p>
-					<time
-						dateTime={post.date}
-						className="mb-1 text-xs text-muted-foreground/60"
-					>
-						{format(parseISO(post.date), "LLLL d, yyyy")}
-					</time>
+					<div className="flex sm:flex-col sm:justify-normal justify-between">
+						<time
+							dateTime={post.date}
+							className="text-xs text-muted-foreground/60"
+						>
+							{format(parseISO(post.date), "LLLL d, yyyy")}
+						</time>
+						<Link
+							href={"/blog"}
+							className="text-muted-foreground hover:text-foreground text-xs p-0"
+						>
+							@noahpittman
+						</Link>
+					</div>
 					<div className="w-full h-[1px] border-b border-b-muted-foreground/50 pt-4" />
 				</div>
 				<div
@@ -49,7 +62,7 @@ const PostLayout = ({ params }) => {
 				/>
 			</article>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
