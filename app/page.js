@@ -174,6 +174,12 @@ export function Projects() {
 		"/donebyHD_gallery/Portfolio.png",
 		"/donebyHD_gallery/Contact.png",
 	];
+	const wavLeeGallery = [
+		"/wavLee_gallery/Home.png",
+		"/wavLee_gallery/Bookings.png",
+		"/wavLee_gallery/Downloads.png",
+		"/wavLee_gallery/Modal.png",
+	];
 
 	return (
 		<div id="projects" className="space-y-12 pt-2">
@@ -213,26 +219,35 @@ export function Projects() {
 						</CardContent>
 					</Card>
 
-					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01] blur-sm pointer-events-none">
+					<Card className=" lg:aspect-video dark:border-secondary bg-background/50 transition-all lg:hover:scale-[1.01]">
 						<CardHeader>
 							<CardTitle className="flex items-center md:text-2xl">
 								<FileIcon className="mr-2" />
-								null
+								wavlee<span className="opacity-50">.com</span>
 							</CardTitle>
 							<CardDescription>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-								expedita molestiae reprehenderit. Architecto earum quae porro
-								commodi sapiente sint ea perferendis nisi, magni id. Optio
-								expedita laborum ab reiciendis. Dolor.
+								Simple & effective portfolio/branding website with Calendly
+								booking integration & a downloads section. One of my earlier
+								projects made while taking a course; made for a client with
+								Gatsby.js using React & a few libraries.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="flex flex-col justify-around h-48">
-							<Button size="lg">Live Demo</Button>
-							<Button size="lg" variant="ghost">
-								Gallery
+							<Button asChild size="lg">
+								<Link target="_blank" href={"https://wavlee.com"}>
+									Live Demo
+								</Link>
 							</Button>
-							<Button size="lg" variant="ghost">
-								Repository
+
+							<GalleryDialog name="Wav Lee" hrefArray={wavLeeGallery} />
+
+							<Button asChild size="lg" variant="ghost">
+								<Link
+									target="_blank"
+									href={"https://github.com/noahpittman/gatsby-wavLee"}
+								>
+									Repository
+								</Link>
 							</Button>
 						</CardContent>
 					</Card>
